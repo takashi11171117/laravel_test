@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 
 Route::group(['namespace' => 'Api'], function () {
+    Route::get('users', 'UserController@index');
     Route::get('users/{id}', 'UserController@show');
 });

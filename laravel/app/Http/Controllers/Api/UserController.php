@@ -10,6 +10,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $users = User::paginate(20);
+
+        return UserResource::collection($users);
+    }
+
     public function show(int $id)
     {
         $user = User::find($id);
